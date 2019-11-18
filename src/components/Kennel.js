@@ -5,7 +5,7 @@ import OwnerCard from './owner/OwnerCard'
 import LocationCard from './location/LocationCard'
 import EmployeeCard from './employee/EmployeeCard'
 import NavBar from './nav/NavBar'
-import ApplicationViews from './ApplicationView'
+import ApplicationViews from './ApplicationViews'
 
 class Kennel extends Component {
     render() {
