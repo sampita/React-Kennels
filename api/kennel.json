@@ -1,7 +1,24 @@
 {
     "animals": [
-        { "id": 1, "name": "Doodles", "breed": "Poodle"},
-        { "id": 2, "name": "Decker", "breed": "German Sheperd" },
-        { "id": 3, "name": "Esme", "breed": "Pitbull" }
+        { "id": 1, "name": "Doodles", "breed": "Poodle", "employeeId": 2, "locationId": 2, "ownerId": [2, 1]},
+        { "id": 2, "name": "Decker", "breed": "German Shepherd", "employeeId": 3, "locationId": 1, "ownerId": 3},
+        { "id": 3, "name": "Esme", "breed": "Pitbull", "employeeId": 1, "locationId": 3, "ownerId": [4, 5]}
+    ],
+    "employees": [
+        { "id": 1, "name": "Jethro Persnicketus"},
+        { "id": 2, "name": "Bernice Jo"},
+        { "id": 3, "name": "Nicholas Claus"}
+    ],
+    "locations": [
+        { "id": 1, "name": "Nashville, TN"},
+        { "id": 2, "name": "San Francisco, CA"},
+        { "id": 3, "name": "Philadelphia, PA"}
+    ],
+    "owners": [
+        { "id": 1, "name": "Ana Banana", "phoneNumber": "(615) 715-9876"},
+        { "id": 2, "name": "Paul Small", "phoneNumber": "(615) 954-5610"},
+        { "id": 3, "name": "Kade Spade", "phoneNumber": "(615) 123-4599"},
+        { "id": 4, "name": "Lanie Moraney", "phoneNumber": "(615) 333-0224"},
+        { "id": 5, "name": "Josh B'Gosh", "phoneNumber": "(615) 424-6787"}
     ]
 }

@@ -8,7 +8,7 @@ class LocationCard extends Component {
           <picture>
             <img id="smallicon" src={require('./location.png')} alt="Dog's Location" />
           </picture>
-          <h5>Location: <span className="card-petlocation">Paris, France</span></h5>
+          <h5>Location: <span className="card-location">{this.props.location.name}</span></h5>
         </div>
       </div>
     );

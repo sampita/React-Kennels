@@ -8,7 +8,8 @@ class OwnerCard extends Component {
           <picture>
             <img id="smallicon" src={require('./owner.png')} alt="Dog's Owner" />
           </picture>
-          <h5>Owner: <span className="card-ownername">Harriet</span></h5>
+          <h5>Owner: <span className="card-ownername">{this.props.owner.name}</span></h5>
+          <p>{this.props.owner.phoneNumber}</p>
         </div>
       </div>
     );
