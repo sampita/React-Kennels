@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //import the components we will need
 import EmployeeCard from './EmployeeCard'
-import EmployeeManager from '../../modules/EmployeeManager'
+import ApiManager from '../../modules/ApiManager'
 
 class EmployeeList extends Component {
     //define what this component needs to render
@@ -12,7 +12,7 @@ class EmployeeList extends Component {
 componentDidMount(){
     console.log("Employee List: ComponentDidMount");
     //getAll from EmployeeManager and hang on to that data; put it in state
-    EmployeeManager.getAll()
+    ApiManager.getAll("employees")
     .then((employees) => {
         this.setState({
             employees: employees

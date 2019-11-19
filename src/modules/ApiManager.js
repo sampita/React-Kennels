@@ -4,7 +4,7 @@ export default {
   get(id) {
     return fetch(`${remoteURL}/animals/${id}`).then(result => result.json())
   },
-  getAll() {
-    return fetch(`${remoteURL}/animals`).then(result => result.json())
+  getAll(tableName) {
+    return fetch(`${remoteURL}/${tableName}`).then(result => result.json())
   }
 }
