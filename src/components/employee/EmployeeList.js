@@ -20,13 +20,29 @@ componentDidMount(){
     })
 }
 
+deleteEmployee = id => {
+    ApiManager.delete("employees", id)
+    .then(() => {
+      ApiManager.getAll("employees")
+      .then((newEmployees) => {
+        this.setState({
+            employees: newEmployees
+        })
+      })
+    })
+  }
+
 render(){
     console.log("EmployeesList: Render");
   
     return(
       <div className="container-cards">
         {this.state.employees.map(employee =>
-          <EmployeeCard key={employee.id} employee={employee} />
+          <EmployeeCard
+          key={employee.id}
+          employee={employee}
+          deleteEmployee={this.deleteEmployee}
+          />
         )}
       </div>
     )

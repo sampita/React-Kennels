@@ -20,17 +20,33 @@ componentDidMount(){
     })
 }
 
+deleteAnimal = id => {
+  ApiManager.delete(id)
+  .then(() => {
+    ApiManager.getAll("animals")
+    .then((newAnimals) => {
+      this.setState({
+          animals: newAnimals
+      })
+    })
+  })
+}
+
 render(){
-    console.log("AnimalList: Render");
-  
-    return(
-      <div className="container-cards">
-        {this.state.animals.map(animal =>
-          <AnimalCard key={animal.id} animal={animal} />
-        )}
-      </div>
-    )
-  }
+  console.log("AnimalList: Render");
+
+  return(
+    <div className="container-cards">
+      {this.state.animals.map(animal =>
+        <AnimalCard
+          key={animal.id}
+          animal={animal}
+          deleteAnimal={this.deleteAnimal}
+        />
+      )}
+    </div>
+  )
+}
 }
 
 export default AnimalList
