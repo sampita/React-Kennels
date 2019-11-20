@@ -20,13 +20,28 @@ componentDidMount(){
     })
 }
 
+deleteOwner = id => {
+    ApiManager.delete("owners", id)
+      .then(() => {
+        ApiManager.getAll("owners")
+          .then((newOwners) => {
+            this.setState({
+              owners: newOwners
+            })
+          })
+      })
+  }
+
 render(){
     console.log("OwnerList: Render");
   
     return(
       <div className="container-cards">
         {this.state.owners.map(owner =>
-          <OwnerCard key={owner.id} owner={owner} />
+          <OwnerCard
+            key={owner.id} 
+            owner={owner}
+            deleteOwner={this.deleteOwner} />
         )}
       </div>
     )

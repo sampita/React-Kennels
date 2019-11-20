@@ -7,8 +7,8 @@ export default {
   getAll(tableName) {
     return fetch(`${remoteURL}/${tableName}`).then(result => result.json())
   },
-  delete(id) {
-    return fetch(`http://localhost:5002/animals/${id}`, {
+  delete(tableName, id) {
+    return fetch(`http://localhost:5002/${tableName}/${id}`, {
         method: "DELETE"
     })
     .then(result => result.json())

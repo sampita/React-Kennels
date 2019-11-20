@@ -20,13 +20,29 @@ componentDidMount(){
     })
 }
 
+deleteLocation = id => {
+    ApiManager.delete("locations", id)
+    .then(() => {
+      ApiManager.getAll("locations")
+      .then((newLocations) => {
+        this.setState({
+            locations: newLocations
+        })
+      })
+    })
+  }
+
 render(){
     console.log("LocationsList: Render");
   
     return(
       <div className="container-cards">
         {this.state.locations.map(location =>
-          <LocationCard key={location.id} location={location} />
+          <LocationCard
+            key={location.id}
+            location={location}
+            deleteLocation={this.deleteLocation}
+          />
         )}
       </div>
     )
