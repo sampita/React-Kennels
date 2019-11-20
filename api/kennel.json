@@ -42,15 +42,21 @@
   "locations": [
     {
       "id": 1,
-      "name": "Nashville, TN"
+      "name": "Nashville, TN",
+      "address": "1234 Demonbreun St, Nashville, TN 37204",
+      "hours": "9AM-5PM, Mon-Fri"
     },
     {
       "id": 2,
-      "name": "San Francisco, CA"
+      "name": "San Francisco, CA",
+      "address": "809 Ocean Ave, San Francisco, CA 90200",
+      "hours": "9AM-7:30PM, Mon-Fri"
     },
     {
       "id": 3,
-      "name": "Philadelphia, PA"
+      "name": "Philadelphia, PA",
+      "address": "3000 Spring Garden St, Philadelphia, PA 19104",
+      "hours": "9AM-4:30PM, Mon-Sat"
     }
   ],
   "owners": [
