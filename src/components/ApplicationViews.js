@@ -24,15 +24,21 @@ class ApplicationViews extends Component {
           return <AnimalList />
         }} />
         <Route path="/animals/:animalId(\d+)" render={(props) => {
-          // Pass the animalId to the AnimalDetailComponent
-          return <AnimalDetail animalId={parseInt(props.match.params.animalId)} />
+          // Pass the animalId and react-router-dom props to the AnimalDetailComponent
+          return <AnimalDetail
+            animalId={parseInt(props.match.params.animalId)}
+            {...props}
+            />
         }} />
         <Route exact path="/locations" render={(props) => {
           return <LocationList />
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
-          // Pass the locationId to the LocationDetailComponent
-          return <LocationDetail locationId={parseInt(props.match.params.locationId)} />
+          // Pass the locationId and react-router-dom props to the LocationDetailComponent
+          return <LocationDetail
+            locationId={parseInt(props.match.params.locationId)}
+            {...props}
+            />
         }} />
 
         {/*

@@ -7,7 +7,9 @@ class LocationDetail extends Component {
   state = {
       name: "",
       address: "",
-      hours: ""
+      hours: "",
+      //set loadingStatus to true initially so that buttons will be disabled untl data renders to page
+      loadingStatus: true
   }
 
   componentDidMount(){
@@ -18,9 +20,19 @@ class LocationDetail extends Component {
       this.setState({
         name: location.name,
         address: location.address,
-        hours: location.hours
+        hours: location.hours,
+        loadingStatus: false
       });
     });
+  }
+
+  handleDelete = () => {
+  //Has to be a fat arrow function so "this" refers to your component
+      //set loadingStatus to true to prevent user from clicking delete button before data loads
+      this.setState({ loadingStatus: true })
+      //invoke the delete function in ApiManager and redirect to the LocationList
+      ApiManager.delete("locations", this.props.locationId)
+        .then(() => this.props.history.push("/locations"))
   }
 
   render() {
@@ -33,6 +45,7 @@ class LocationDetail extends Component {
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
             <p>Address: {this.state.address}</p>
             <p>Hours: {this.state.hours}</p>
+            <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Close Location</button>
         </div>
       </div>
     );

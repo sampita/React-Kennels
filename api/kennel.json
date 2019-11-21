@@ -1,14 +1,6 @@
 {
   "animals": [
     {
-    "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle",
-      "employeeId": 2,
-      "locationId": 1,
-      "ownerId": 3
-    },
-    {
       "id": 2,
       "name": "Decker",
       "breed": "German Shepherd",
@@ -45,12 +37,6 @@
       "name": "Nashville, TN",
       "address": "1234 Demonbreun St, Nashville, TN 37204",
       "hours": "9AM-5PM, Mon-Fri"
-    },
-    {
-      "id": 2,
-      "name": "San Francisco, CA",
-      "address": "809 Ocean Ave, San Francisco, CA 90200",
-      "hours": "9AM-7:30PM, Mon-Fri"
     },
     {
       "id": 3,
