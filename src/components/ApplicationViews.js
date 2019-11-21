@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Home from './home/Home'
 import AnimalList from './animal/AnimalList'
 import AnimalDetail from './animal/AnimalDetail'
+import AnimalForm from './animal/AnimalForm'
 //only include these once they are built - previous practice exercise
 import LocationList from './location/LocationList'
 import LocationDetail from './location/LocationDetail'
@@ -21,14 +22,18 @@ class ApplicationViews extends Component {
         }} />
         {/* Make sure you add the `exact` attribute here */}
         <Route exact path="/animals" render={(props) => {
-          return <AnimalList />
+          /* Give AnimalList access to react-router-dom history by passing props. Now the New Animal button can send user to new url with history.push */
+          return <AnimalList {...props}/>
+        }} />
+        <Route path="/animals/new" render={(props) => {
+          return <AnimalForm {...props} />
         }} />
         <Route path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId and react-router-dom props to the AnimalDetailComponent
           return <AnimalDetail
             animalId={parseInt(props.match.params.animalId)}
             {...props}
-            />
+          />
         }} />
         <Route exact path="/locations" render={(props) => {
           return <LocationList />
@@ -38,7 +43,7 @@ class ApplicationViews extends Component {
           return <LocationDetail
             locationId={parseInt(props.match.params.locationId)}
             {...props}
-            />
+          />
         }} />
 
         {/*

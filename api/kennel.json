@@ -1,6 +1,14 @@
 {
   "animals": [
     {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle",
+      "employeeId": 2,
+      "locationId": 1,
+      "ownerId": 3
+    },
+    {
       "id": 2,
       "name": "Decker",
       "breed": "German Shepherd",
@@ -15,6 +23,16 @@
       "employeeId": 3,
       "locationId": 1,
       "ownerId": 3
+    },
+    {
+      "name": "Rosie",
+      "breed": "Mixed Breed",
+      "id": 4
+    },
+    {
+      "name": "Mowgli",
+      "breed": "Great Dane",
+      "id": 5
     }
   ],
   "employees": [
@@ -34,15 +52,15 @@
   "locations": [
     {
       "id": 1,
-      "name": "Nashville, TN",
-      "address": "1234 Demonbreun St, Nashville, TN 37204",
-      "hours": "9AM-5PM, Mon-Fri"
+      "name": "Nashville, TN"
+    },
+    {
+      "id": 2,
+      "name": "San Francisco, CA"
     },
     {
       "id": 3,
-      "name": "Philadelphia, PA",
-      "address": "3000 Spring Garden St, Philadelphia, PA 19104",
-      "hours": "9AM-4:30PM, Mon-Sat"
+      "name": "Philadelphia, PA"
     }
   ],
   "owners": [
