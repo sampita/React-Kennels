@@ -44,4 +44,10 @@
   
   .card button:hover {
     background-color: darkblue;
+    cursor: pointer;
+  }
+
+  img {
+    width: 300px;
+    height: 220px;
   }

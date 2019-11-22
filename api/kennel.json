@@ -4,34 +4,18 @@
       "id": 1,
       "name": "Doodles",
       "breed": "Poodle",
-      "employeeId": 2,
-      "locationId": 1,
-      "ownerId": 3
-    },
-    {
-      "id": 2,
-      "name": "Decker",
-      "breed": "German Shepherd",
-      "employeeId": 3,
-      "locationId": 1,
-      "ownerId": 3
-    },
-    {
-      "id": 3,
-      "name": "Esme",
-      "breed": "Pitbull",
-      "employeeId": 3,
-      "locationId": 1,
-      "ownerId": 3
+      "imageURL": "https://cdn2-www.dogtime.com/assets/uploads/gallery/poodle-dog-breed-pictures/elegence-1.jpg"
     },
     {
       "name": "Rosie",
       "breed": "Mixed Breed",
+      "imageURL": "https://i.pinimg.com/originals/91/b1/74/91b174ad1b0b3c49afe29c136e717123.jpg",
       "id": 4
     },
     {
       "name": "Mowgli",
       "breed": "Great Dane",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoR7dyAF4DxiWT1XfgGjEKA3486rnfOUUF9Grd41csiwDzQNjyww&s",
       "id": 5
     }
   ],
@@ -65,6 +49,11 @@
     {
       "id": 3,
       "name": "Philadelphia, PA"
+    },
+    {
+      "name": "Memphis, TN",
+      "address": "405 Jazz Ct, Memphis, TN 80870",
+      "id": 4
     }
   ],
   "owners": [
@@ -79,11 +68,6 @@
       "phoneNumber": "(615) 954-5610"
     },
     {
-      "id": 3,
-      "name": "Kade Spade",
-      "phoneNumber": "(615) 123-4599"
-    },
-    {
       "id": 4,
       "name": "Lanie Moraney",
       "phoneNumber": "(615) 333-0224"
@@ -92,6 +76,11 @@
       "id": 5,
       "name": "Josh B'Gosh",
       "phoneNumber": "(615) 424-6787"
+    },
+    {
+      "name": "Danny Young",
+      "phoneNumber": "(213) 595-2669",
+      "id": 6
     }
   ]
 }

@@ -7,6 +7,7 @@ class AnimalDetail extends Component {
   state = {
       name: "",
       breed: "",
+      imageURL: "",
       loadingStatus: true
   }
 
@@ -17,6 +18,7 @@ class AnimalDetail extends Component {
       this.setState({
         name: animal.name,
         breed: animal.breed,
+        imageURL: animal.imageURL,
         loadingStatus: false
       });
     });
@@ -35,7 +37,7 @@ class AnimalDetail extends Component {
       <div className="card">
         <div className="card-content">
           <picture>
-            <img src={require('./dog.svg')} alt="My Dog" />
+          <img src={`${this.state.imageURL}`} alt="My Dog" />
           </picture>
           <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
           <p>Breed: {this.state.breed}</p>

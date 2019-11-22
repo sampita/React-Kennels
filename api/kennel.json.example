@@ -43,14 +43,20 @@
     {
       "id": 1,
       "name": "Nashville, TN"
+      "address": "2039 8th Ave S, Nashville, TN 37204"
+      "hours": "8AM-5PM Mon-Fri"
     },
     {
       "id": 2,
       "name": "San Francisco, CA"
+      "address": "123 Ocean Ave, San Francisco, CA 00003"
+      "hours": "9AM-4:30PM Mon-Sat"
     },
     {
       "id": 3,
       "name": "Philadelphia, PA"
+      "address": "3318 Spring Garden St, Philadelphia, PA 19104"
+      "hours": "8AM-5PM Mon-Fri"
     }
   ],
   "owners": [
