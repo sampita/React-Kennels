@@ -1,12 +1,13 @@
 import React, { Component } from "react"
-import AnimalManager from "../../modules/AnimalManager"
-import "./AnimalForm.css"
+import ApiManager from "../../modules/ApiManager"
+// import "./AnimalForm.css"
 
 class AnimalEditForm extends Component {
     //set the initial state
     state = {
       animalName: "",
       breed: "",
+      imageURL: "",
       loadingStatus: true,
     };
 
@@ -22,19 +23,21 @@ class AnimalEditForm extends Component {
       const editedAnimal = {
         id: this.props.match.params.animalId,
         name: this.state.animalName,
-        breed: this.state.breed
+        breed: this.state.breed,
+        imageURL: this.state.imageURL
       };
 
-      AnimalManager.update(editedAnimal)
+      ApiManager.update("animals", editedAnimal)
       .then(() => this.props.history.push("/animals"))
     }
 
     componentDidMount() {
-      AnimalManager.get(this.props.match.params.animalId)
+      ApiManager.get("animals", this.props.match.params.animalId)
       .then(animal => {
           this.setState({
             animalName: animal.name,
             breed: animal.breed,
+            imageURL: animal.imageURL,
             loadingStatus: false,
           });
       });
@@ -65,6 +68,16 @@ class AnimalEditForm extends Component {
                 value={this.state.breed}
               />
               <label htmlFor="breed">Breed</label>
+
+              <input
+                type="text"
+                required
+                className="form-control"
+                onChange={this.handleFieldChange}
+                id="breed"
+                value={this.state.imageURL}
+              />
+              <label htmlFor="imageURL">Image URL</label>
             </div>
             <div className="alignRight">
               <button

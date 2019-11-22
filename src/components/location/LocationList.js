@@ -36,6 +36,14 @@ render(){
     console.log("LocationsList: Render");
   
     return(
+      <>
+      <section className="section-content">
+        <button type="button"
+          className="btn"
+          onClick={() => {this.props.history.push("/locations/new")}}>
+          + Add New Location
+        </button>
+      </section>
       <div className="container-cards">
         {this.state.locations.map(location =>
           <LocationCard
@@ -45,6 +53,7 @@ render(){
           />
         )}
       </div>
+      </>
     )
   }
 }

@@ -21,5 +21,14 @@ export default {
         },
         body: JSON.stringify(newObject)
     }).then(data => data.json())
+  },
+  update(tableName, editedAnimal) {
+    return fetch(`${remoteURL}/${tableName}/${editedAnimal.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedAnimal)
+    }).then(data => data.json());
   }
 }
