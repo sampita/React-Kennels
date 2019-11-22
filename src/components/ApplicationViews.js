@@ -8,6 +8,7 @@ import AnimalForm from './animal/AnimalForm'
 import LocationList from './location/LocationList'
 import LocationDetail from './location/LocationDetail'
 import EmployeeList from './employee/EmployeeList'
+import EmployeeForm from './employee/EmployeeForm'
 import OwnerList from './owner/OwnerList'
 
 
@@ -45,7 +46,13 @@ class ApplicationViews extends Component {
             {...props}
           />
         }} />
-
+        <Route exact path="/employees" render={(props) => {
+          /* Give EmployeeList access to react-router-dom history by passing props. Now the New Animal button can send user to new url with history.push */
+          return <EmployeeList {...props}/>
+        }} />
+        <Route path="/employees/new" render={(props) => {
+          return <EmployeeForm {...props} />
+        }} />
         {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1

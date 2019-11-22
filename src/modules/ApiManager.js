@@ -13,13 +13,13 @@ export default {
     })
     .then(result => result.json())
   },
-  post(tableName, newAnimal) {
+  post(tableName, newObject) {
     return fetch(`${remoteURL}/${tableName}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(newAnimal)
+        body: JSON.stringify(newObject)
     }).then(data => data.json())
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ApiManager from '../../modules/ApiManager';
-import './AnimalForm.css'
+import '../../components/Form.css'
 
 class AnimalForm extends Component {
     // make key/value pair for every single input field
