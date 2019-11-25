@@ -85,7 +85,7 @@ class LocationEditForm extends Component {
                         <div className="alignRight">
                             <button
                                 type="button" disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingAnimal}
+                                onClick={this.updateExistingLocation}
                                 className="btn btn-primary"
                             >Submit</button>
                         </div>
