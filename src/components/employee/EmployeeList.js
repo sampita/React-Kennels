@@ -33,7 +33,6 @@ deleteEmployee = id => {
   }
 
 render(){
-  console.log("EmployeesList: Render");
   //Add New Employee button and Employee Cards
     return(
     <React.Fragment>
@@ -50,6 +49,7 @@ render(){
             key={employee.id}
             employee={employee}
             deleteEmployee={this.deleteEmployee}
+            {...this.props}
             />
           )}
         </div>

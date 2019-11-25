@@ -30,5 +30,9 @@ export default {
       },
       body: JSON.stringify(editedAnimal)
     }).then(data => data.json());
-  }
+  },
+  getEmployeesWithAnimals(id) {
+    return fetch(`${remoteURL}/employees/${id}?_embed=animals`)
+            .then(result => result.json())
+}
 }
