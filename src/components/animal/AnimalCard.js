@@ -8,7 +8,7 @@ class AnimalCard extends Component {
       <div className="card">
         <div className="card-content">
           <picture>
-            <img src={(`${this.props.animal.imageURL}`)} alt="My Dog" />
+            <img src={(`${this.props.animal.imageURL}`)} alt="A Pet" />
           </picture>
           <h2>Name: <span className="card-petname">{this.props.animal.name}</span></h2>
           <p>Breed: {this.props.animal.breed}</p>

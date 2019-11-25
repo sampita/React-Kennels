@@ -3,15 +3,15 @@ import React, { Component } from 'react'
 import Home from './home/Home'
 import AnimalList from './animal/AnimalList'
 import AnimalDetail from './animal/AnimalDetail'
-import AnimalForm from './animal/AnimalForm'
 import AnimalEditForm from './animal/AnimalEditForm'
-//only include these once they are built - previous practice exercise
 import LocationList from './location/LocationList'
 import LocationDetail from './location/LocationDetail'
 import LocationForm from './location/LocationForm'
+import LocationEditForm from './location/LocationEditForm'
 import EmployeeList from './employee/EmployeeList'
 import EmployeeForm from './employee/EmployeeForm'
 import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
+import EmployeeEditForm from './employee/EmployeeEditForm'
 import OwnerList from './owner/OwnerList'
 import OwnerForm from './owner/OwnerForm'
 import Login from './auth/Login'
@@ -56,12 +56,15 @@ class ApplicationViews extends Component {
         <Route path="/locations/new" render={(props) => {
           return <LocationForm {...props} />
         }} />
-        <Route path="/locations/:locationId(\d+)" render={(props) => {
+        <Route exact path="/locations/:locationId(\d+)" render={(props) => {
           // Pass the locationId and react-router-dom props to the LocationDetailComponent
           return <LocationDetail
             locationId={parseInt(props.match.params.locationId)}
             {...props}
           />
+        }} />
+        <Route path="/locations/:locationId(\d+)/edit" render={props => {
+          return <LocationEditForm {...props} />
         }} />
         <Route exact path="/employees" render={(props) => {
           /* Give EmployeeList access to react-router-dom history by passing props. Now the New Employee button can send user to new url with history.push */
@@ -70,11 +73,16 @@ class ApplicationViews extends Component {
         <Route path="/employees/new" render={(props) => {
           return <EmployeeForm {...props} />
         }} />
-        <Route path="/employees/:employeeId(\d+)" render={(props) => {
+        <Route exact path="/employees/:employeeId(\d+)" render={(props) => {
           return <EmployeeWithAnimals
           employeeId={parseInt(props.match.params.employeeId)}
           {...props} />
         }} />
+        <Route
+          path="/employees/:employeeId(\d+)/edit" render={props => {
+            return <EmployeeEditForm {...props} />
+          }}
+        />
         <Route exact path="/owners" render={(props) => {
           /* Give OwnerList access to react-router-dom history by passing props. Now the New Owner button can send user to new url with history.push */
           return <OwnerList {...props} />
