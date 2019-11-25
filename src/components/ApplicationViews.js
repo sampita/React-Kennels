@@ -11,6 +11,7 @@ import LocationDetail from './location/LocationDetail'
 import LocationForm from './location/LocationForm'
 import EmployeeList from './employee/EmployeeList'
 import EmployeeForm from './employee/EmployeeForm'
+import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
 import OwnerList from './owner/OwnerList'
 import OwnerForm from './owner/OwnerForm'
 import Login from './auth/Login'
@@ -69,13 +70,16 @@ class ApplicationViews extends Component {
         <Route path="/employees/new" render={(props) => {
           return <EmployeeForm {...props} />
         }} />
-        <Route exact path="/owners" render={(props) => 
-        {
+        <Route path="/employees/:employeeId(\d+)" render={(props) => {
+          return <EmployeeWithAnimals
+          employeeId={parseInt(props.match.params.employeeId)}
+          {...props} />
+        }} />
+        <Route exact path="/owners" render={(props) => {
           /* Give OwnerList access to react-router-dom history by passing props. Now the New Owner button can send user to new url with history.push */
           return <OwnerList {...props} />
         }} />
-        <Route path="/owners/new" render={(props) => 
-        {
+        <Route path="/owners/new" render={(props) => {
           return <OwnerForm {...props} />
         }} />
         <Route path="/login" component={Login} />
