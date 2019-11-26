@@ -40,7 +40,7 @@ render(){
         <button type="button"
             className="btn"
             onClick={() => {this.props.history.push("/employees/new")}}>
-            Add Employee
+            + Add Employee
         </button>
       </section>
         <div className="container-cards">
