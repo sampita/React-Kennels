@@ -33,7 +33,7 @@ deleteLocation = id => {
   }
 
 render(){
-    console.log("LocationsList: Render");
+    console.log("list this.props", this.props)
   
     return(
       <>
@@ -48,8 +48,9 @@ render(){
         {this.state.locations.map(location =>
           <LocationCard
             key={location.id}
-            location={location}
+            kennelLocation={location}
             deleteLocation={this.deleteLocation}
+            {...this.props}
           />
         )}
       </div>
