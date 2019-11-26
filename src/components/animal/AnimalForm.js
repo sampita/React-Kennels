@@ -7,7 +7,13 @@ class AnimalForm extends Component {
     state = {
         animalName: "",
         breed: "",
+        imageURL: "",
+        employees: [],
         loadingStatus: false,
+    };
+
+    componentDidMount() {
+        ApiManager.getAll("employees").then(employeesArray => this.setState({employees: employeesArray}))
     };
 
     handleFieldChange = evt => {
@@ -20,8 +26,9 @@ class AnimalForm extends Component {
     /*  Local method for validation, set loadingStatus, create animal      object, invoke the ApiManager post method, and redirect to the full animal list
     */
     constructNewAnimal = evt => {
+        console.log("testing")
         evt.preventDefault();
-        if (this.state.animalName === "" || this.state.breed === "") {
+        if (this.state.animalName === "" || this.state.breed === "" || this.state.imageURL === "" ) {
             window.alert("Please input an animal name and breed");
         } else {
             //disable the button while the Post request is running:
@@ -29,6 +36,8 @@ class AnimalForm extends Component {
             const animal = {
                 name: this.state.animalName,
                 breed: this.state.breed,
+                imageURL: this.state.imageURL,
+                employeeId: Number(this.state.employee)
             };
 
             // Create (post request) the animal and redirect user to animal list
@@ -39,7 +48,7 @@ class AnimalForm extends Component {
     };
 
     render(){
-
+        console.log("AnimalForm state", this.state)
         return(
             <>
             <form>
@@ -61,6 +70,27 @@ class AnimalForm extends Component {
                             placeholder="Breed"
                         />
                         <label htmlFor="breed">Breed</label>
+                        <input
+                            type="text"
+                            required
+                            onChange={this.handleFieldChange}
+                            id="imageURL"
+                            placeholder="Image URL"
+                        />
+                        <label htmlFor="imageUrl">Image URL</label>
+                        <select
+                                className="form-control"
+                                id="employeeId"
+                                value={this.state.employeeId}
+                                onChange={this.handleFieldChange}
+                            >
+                                {this.state.employees.map(employee =>
+                                    <option key={employee.id} value={employee.id}>
+                                        {employee.name}
+                                    </option>
+                                )}
+                            </select>
+                        <label htmlFor="employee">Employee</label>
                     </div>
                     <div className="alignRight">
                         <button

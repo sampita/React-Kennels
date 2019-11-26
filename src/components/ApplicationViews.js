@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Home from './home/Home'
 import AnimalList from './animal/AnimalList'
 import AnimalDetail from './animal/AnimalDetail'
+import AnimalForm from './animal/AnimalForm'
 import AnimalEditForm from './animal/AnimalEditForm'
 import LocationList from './location/LocationList'
 import LocationDetail from './location/LocationDetail'
@@ -14,6 +15,7 @@ import EmployeeWithAnimals from './employee/EmployeeWithAnimals'
 import EmployeeEditForm from './employee/EmployeeEditForm'
 import OwnerList from './owner/OwnerList'
 import OwnerForm from './owner/OwnerForm'
+import OwnerEditForm from './owner/OwnerEditForm'
 import Login from './auth/Login'
 
 
@@ -34,7 +36,7 @@ class ApplicationViews extends Component {
           }
         }} />
         <Route path="/animals/new" render={(props) => {
-          return <AnimalEditForm {...props} />
+          return <AnimalForm {...props} />
         }} />
         <Route exact path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
@@ -84,6 +86,8 @@ class ApplicationViews extends Component {
         }} />
         <Route path="/owners/new" render={(props) => {
           return <OwnerForm {...props} />
+        }} />
+        <Route path="/owners/:ownerId(\d+)/edit" render={props => {return <OwnerEditForm {...props} />
         }} />
         <Route path="/login" render={(props) => {
             return <Login setUser={this.props.setUser} {...props}/>
