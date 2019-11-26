@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class EmployeeCard extends Component {
   render() {
@@ -12,7 +13,7 @@ class EmployeeCard extends Component {
           <button type="button"
             onClick={() => { this.props.history.push(`/employees/${this.props.employee.id}`) }}>Details</button>
           <button type="button" onClick={() => {this.props.history.push(`/employees/${this.props.employee.id}/edit`)}}>Edit</button>
-          <button type="button" onClick={() => this.props.deleteEmployee(this.props.employee.id)}>Delete</button>
+          <FontAwesomeIcon icon="trash-alt" type="button" onClick={() => this.props.deleteEmployee( this.props.employee.id)} />
         </div>
       </div>
     );

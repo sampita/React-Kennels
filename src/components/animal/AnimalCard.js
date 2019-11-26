@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./Animal.css"
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class AnimalCard extends Component {
   render() {
@@ -15,7 +16,7 @@ class AnimalCard extends Component {
           <button type="button"
             onClick={() => { this.props.history.push(`/animals/${this.props.animal.id}/edit`) }}>Edit</button>
           <Link to={`/animals/${this.props.animal.id}`}><button>Details</button></Link>
-          <button type="button" onClick={() => this.props.deleteAnimal(this.props.animal.id)}>Discharge</button>
+          <FontAwesomeIcon icon="trash-alt" type="button" onClick={() => this.props.deleteAnimal(this.props.animal.id)} />
         </div>
       </div>
     );

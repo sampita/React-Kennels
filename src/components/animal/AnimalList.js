@@ -21,7 +21,7 @@ class AnimalList extends Component {
   }
 
   deleteAnimal = id => {
-    ApiManager.delete(id)
+    ApiManager.delete("animals", id)
       .then(() => {
         ApiManager.getAll("animals")
           .then((newAnimals) => {
