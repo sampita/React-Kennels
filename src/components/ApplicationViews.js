@@ -18,11 +18,6 @@ import Login from './auth/Login'
 
 
 class ApplicationViews extends Component {
-
-  //Check if credentials are in local storage
-  //returns true/false
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
-
   render() {
     {/* if path is slash (home), then render the home component, if path is animals then render animals component */ }
     return (
@@ -32,7 +27,7 @@ class ApplicationViews extends Component {
         }} />
         {/* Make sure you add the `exact` attribute here */}
         <Route exact path="/animals" render={props => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <AnimalList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -90,7 +85,9 @@ class ApplicationViews extends Component {
         <Route path="/owners/new" render={(props) => {
           return <OwnerForm {...props} />
         }} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={(props) => {
+            return <Login setUser={this.props.setUser} {...props}/>
+        }} />
         {/*
   This is a new route to handle a URL with the following pattern:
   http://localhost:3000/animals/1

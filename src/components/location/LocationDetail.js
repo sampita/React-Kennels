@@ -45,7 +45,7 @@ class LocationDetail extends Component {
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
             <p>Address: {this.state.address}</p>
             <p>Hours: {this.state.hours}</p>
-            <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Close Location</button>
+            <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Delete Location</button>
         </div>
       </div>
     );
