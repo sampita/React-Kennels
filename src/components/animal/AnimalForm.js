@@ -8,12 +8,17 @@ class AnimalForm extends Component {
         animalName: "",
         breed: "",
         imageURL: "",
+        employeeId: "",
         employees: [],
         loadingStatus: false,
     };
 
     componentDidMount() {
-        ApiManager.getAll("employees").then(employeesArray => this.setState({employees: employeesArray}))
+        ApiManager.getAll("employees").then(employeesArray => this.setState({
+            employees: employeesArray,
+            employeeId: employeesArray[0].id
+        }))
+
     };
 
     handleFieldChange = evt => {
@@ -26,7 +31,6 @@ class AnimalForm extends Component {
     /*  Local method for validation, set loadingStatus, create animal      object, invoke the ApiManager post method, and redirect to the full animal list
     */
     constructNewAnimal = evt => {
-        console.log("testing")
         evt.preventDefault();
         if (this.state.animalName === "" || this.state.breed === "" || this.state.imageURL === "" ) {
             window.alert("Please input an animal name and breed");
@@ -37,7 +41,7 @@ class AnimalForm extends Component {
                 name: this.state.animalName,
                 breed: this.state.breed,
                 imageURL: this.state.imageURL,
-                employeeId: Number(this.state.employee)
+                employeeId: Number(this.state.employeeId)
             };
 
             // Create (post request) the animal and redirect user to animal list
@@ -85,7 +89,7 @@ class AnimalForm extends Component {
                                 onChange={this.handleFieldChange}
                             >
                                 {this.state.employees.map(employee =>
-                                    <option key={employee.id} value={employee.id}>
+                                    <option key={employee.id} value={employee.id} id={employee.id}>
                                         {employee.name}
                                     </option>
                                 )}
