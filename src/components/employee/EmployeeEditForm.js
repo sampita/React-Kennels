@@ -23,7 +23,7 @@ class EmployeeEditForm extends Component {
         };
 
         APIManager.update("employees", editedEmployee)
-        .then(() => this.props.history.push("/animals"))
+        .then(() => this.props.history.push("/employees"))
     }
 
     componentDidMount() {
