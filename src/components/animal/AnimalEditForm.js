@@ -26,7 +26,7 @@ class AnimalEditForm extends Component {
             name: this.state.animalName,
             breed: this.state.breed,
             imageURL: this.state.imageURL,
-            employeeId: Number(this.state.employee)
+            employeeId: Number(this.state.employeeId)
         };
 
         ApiManager.update("animals", editedAnimal)
@@ -35,20 +35,22 @@ class AnimalEditForm extends Component {
 
     componentDidMount() {
         ApiManager.get("animals", this.props.match.params.animalId)
-            .then(animal => {
-                this.setState({
-                    animalName: animal.name,
-                    breed: animal.breed,
-                    imageURL: animal.imageURL,
-                    employeeId: animal.employeeId,
-                    loadingStatus: false,
-                });
+        .then(animal => {
+            this.setState({
+                animalName: animal.name,
+                breed: animal.breed,
+                imageURL: animal.imageURL,
+                employeeId: animal.employeeId,
+                loadingStatus: false,
             });
+            console.log("componentDidMount", this.state)
+        });
 
         ApiManager.getAll("employees").then(employeesArray => this.setState({employees: employeesArray}))
     }
 
     render() {
+        console.log("final render", this.state)
         return (
             <>
                 <form>
