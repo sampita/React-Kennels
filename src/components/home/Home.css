@@ -1,0 +1,10 @@
+#homeAddress {
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+#homeImage {
+    width: 70%;
+    height: auto;
+    border: 5px solid cornflowerblue;
+}

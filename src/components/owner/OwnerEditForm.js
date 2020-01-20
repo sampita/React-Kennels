@@ -40,7 +40,6 @@ class OwnerEditForm extends Component {
     }
 
     render() {
-        console.log("ownerEditForm this.props", this.props)
         return (
             <>
                 <form>
