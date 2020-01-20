@@ -22,6 +22,7 @@ class OwnerEditForm extends Component {
         const editedOwner = {
             id: this.props.match.params.ownerId,
             name: this.state.ownerName,
+            phoneNumber: this.state.phoneNumber
         }
 
         APIManager.update("owners", editedOwner)

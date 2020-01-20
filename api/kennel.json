@@ -2,7 +2,7 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodle",
+      "name": "Doodles",
       "breed": "Poodle",
       "imageURL": "https://cdn2-www.dogtime.com/assets/uploads/gallery/poodle-dog-breed-pictures/elegence-1.jpg",
       "employeeId": 1
@@ -104,8 +104,8 @@
     },
     {
       "id": 3,
-      "name": "Kade Spade!",
-      "phoneNumber": "(615) 343-2987"
+      "name": "Kate Spade",
+      "phoneNumber": "(615) 715-9876"
     },
     {
       "id": 4,
