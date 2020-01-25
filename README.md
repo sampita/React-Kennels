@@ -2,7 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![preview](./app-preview.png)
+![preview](./kennels.gif)
+
 
 ## Project
 
@@ -11,3 +12,5 @@ This project had me building a single-page, dynamic React application for a stud
 You can only view detailed information like pets, owners, and employees if you are logged in.
 
 Pets are input in the database with both an associated owner and employee.
+
+![preview](./kennels-pt2.gif)
